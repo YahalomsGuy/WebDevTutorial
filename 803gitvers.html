@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Git Versioning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./base/css/main.css">
+</head>
+
+<body>
+    <div class="head">Git Versioning</div>
+    <pre class="taconsole"><code data-language="console">Note: Terminal commands are displayed this way</code></pre>
+
+    <div>To start practicing Git:</div>
+    <ul>
+        <li>Open an empty folder in VScode</li>
+        <li>Create a new file e.g. index.html</li>
+        <li>create a basic html page (emmet VScode html[] template or other)</li>
+        <img src="./images/Git/GitVers01.jpg" width="400px" alt="">
+        <li>save the file</li>
+        <li>In the console window type in:</li>
+        <pre class="taconsole"><code data-language="console">git init</code></pre>
+        <li>You will get a response from the git server saying the folder was initialized</li>
+        <img src="./images/Git/GitVers02.jpg" width="400px" alt="">
+        <li>You can also notice that the explorer window now shows some new features</li>
+        <img src="./images/Git/GitVers03.jpg" width="400px" alt="">
+        <ul>
+            <li>The Fork sign is now active , it is managing the versioning of Git</li>
+            <li>It also says theres 1 unsaved change</li>
+        </ul>
+        <li>to "stage" the file in Git type in:</li>
+        <pre class="taconsole"><code data-language="console">git add . </code></pre>
+        <div>the . in the end of the command means "all files", we can always decide to stage a single file by its name.</div>
+        <li>in this stage, you can see in the window explorer that the file is "Staged"</li>
+        <img src="./images/Git/GitVers04.jpg" width="400px" alt="">
+        <li>To save the changes to the Git repository, in the terminal window type in:</li>
+        <pre class="taconsole"><code data-language="console">git commit -m "Created the html file"</code></pre>
+        <div>you should get a response from the server as follows:</div>
+        <img src="./images/Git/GitVers05.jpg" width="400px" alt="">
+        <div><b>You have just created a new version of the project and saved it to the local Git repository</b></div>
+        <li>During changes you will see a green mark in the line you are working in, mean "you added a line"</li>
+        <img src="./images/Git/GitVers06.jpg" width="400px" alt="">
+        <li>Clicking this mark, will open a window in h code shouwing the changes</li>
+        <img src="./images/Git/GitVers07.jpg" width="400px" alt="">
+        <li>As noted previously: starting the 2nd commit to a file, the 'add' and 'commit' action can be made together with the </li>
+        <pre class="taconsole"><code data-language="console">git commit -am "commit message"</code></pre>
+        <li>After a change is made, clicking the file in the Git window, will show the "Working tree window", the commited and the edited versions of the file , side by side.</li>
+        <img src="./images/Git/GitVers08.jpg" width="400px" alt="">
+        <li>Instead of using the terminal window, we can use the Message window in the explorer window to add a commit message and CTRL+Enter to make commit.</li>
+        <img src="./images/Git/GitVers09.jpg" width="400px" alt="">
+    </ul>
+    <hr>
+    <div>
+        <h2>Reverting and recovering changes</h2>
+    </div>
+    <div>If a file (or a whole project) was deleted, we can recover it in two ways:</div>
+    <ul>
+        <li>
+            from the terminal windows
+        </li>
+        <pre class="taconsole"><code data-language="console">git checkout head .</code></pre>
+        <li>
+            from the explorer window, we can recover the deleted file (marked in D), whith right cloick and "Discar changes"
+        </li>
+        <img src="./images/Git/GitVers10.jpg" width="400px" alt="">
+    </ul>
+    <hr>
+    <div>
+        <h2>Git Branching</h2>
+    </div>
+    <div>Branching is creating a new path of version , parallel to the original branch, called 'master'</div>
+    <div>
+        <h3>To create a branch:</h3>
+    </div>
+    <pre class="taconsole"><code data-language="console">git checkout -b newBranchName</code></pre>
+    <div>
+        <h3>To show all the branches:</h3>
+    </div>
+    <pre class="taconsole"><code data-language="console">git branch</code></pre>
+    <div>
+        <h3>To switch between branches(e.g. to master):</h3>
+    </div>
+    <pre class="taconsole"><code data-language="console">git checkout master</code></pre>
+    <div>
+        <h3>To merge a branch into the master branch:</h3>
+    </div>
+    <ul>
+        <li>Revert to the master branch:</li>
+        <pre class="taconsole"><code data-language="console">git checkout master</code></pre>
+        <li>Merge the branch to it:</li>
+        <pre class="taconsole"><code data-language="console">git merge newBranchName</code></pre>
+        <div>In case of conflicts between the <b>master</b> and <b>merged</b> branch,</div>
+        <li>Git can resolve some automatically</li>
+        <li>Other conflicts will need to be manually resolved</li>
+        <img src="./images/Git/GitVers11.jpg" width="400px" alt="">
+    </ul>
+    <a href="./index.html">back to main page</a>
+    <script src="./base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

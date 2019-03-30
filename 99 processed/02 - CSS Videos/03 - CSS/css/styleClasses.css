@@ -1,0 +1,51 @@
+.green {
+    color: white;
+    font-size: 30px;
+    background-color: green;
+}
+/*
+.blue {
+    color:blue;
+    font-size: 30px;
+} 
+*/
+
+#red {
+    color: red;
+    font-size: 25px;
+}
+
+.head {
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+
+
+}
+ 
+h2, h3 {
+    text-align: center; color: blue;
+}
+
+body {
+    background-color: blanchedalmond;
+}
+
+.required {
+    color: red;
+}
+
+a {
+    color: blue;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover {
+    color: green;
+}
+a:active {
+    color: yellow;
+}

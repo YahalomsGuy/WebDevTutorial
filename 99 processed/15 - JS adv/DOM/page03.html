@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JS - DOM events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/base/css/main.css">
+    
+</head>
+<body>
+<div class="head">
+    Events in JavaScript
+</div>
+<div>By Querying an element or class, JS can perform actions</div>
+
+
+<br>
+<pre><code data-language="javascript">var el = document.querySelector(name);</code></pre>
+
+<input class="firstName" type="text" placeholder="FirstName"><br>
+<input class="lastName" type="text" placeholder="Last Name"> 
+
+<pre><code data-language="javascript">document.querySelector('.firstName').focus();</code></pre>
+<div>Changes the focus to the First Name input box</div>
+<hr>
+<div>interacting with a Button</div>
+<div id="btnNoBtn">Giving the button an id</div>
+<pre><code data-language="javascript"><button id="btn1">Click Here</button></code></pre>
+<button id="myBtn">Click Me!</button>
+<div>and assigning a function in JavaScript</div>
+<div class="head">.onClick</div>
+<pre><code data-language="javascript">
+document.querySelector('#btn1').onclick = 
+function() {
+    alert("Clicked");
+};
+</code></pre>
+<div>or by assigning the query to a variable and calling the function</div>
+<pre><code data-language="javascript">
+var goBtn = document.querySelector('#myBtn')
+goBtn.onclick = function() {
+    alert("You just Clicked");
+}
+</code></pre>
+<div class="head">
+.addEventListener</div> 
+<pre><code data-language="javascript">
+var secondMove = function() {
+    alert('the second move');
+}
+goBtn.addEventListener('click',secondMove)
+</code></pre>
+<div>but instead of creating a finction in the .js file</div>
+<div>it can be written in the element itself</div>
+<pre><code data-language="javascript">
+    <button id="Btn2" onClick="Alert('From the HTML')">Click Me!</button>
+</code></pre>
+<button class="colorfulButton" >
+        <!-- onClick="alert('From the HTML')" 
+        onmouseover=this.style.color='green' 
+        onmouseout=this.style.color='blue' 
+        onmousedown=this.style.color='black' -->
+        
+    Click Me!
+</button>
+<br><br><br><br><br>
+<hr>
+
+
+<pre><code data-language="javascript"></code></pre>
+<pre><code data-language="javascript"></code></pre>
+<pre><code data-language="javascript"></code></pre>
+<pre><code data-language="javascript"></code></pre>
+
+<script src="./js/page03.js"></script>
+
+<div><a href="page04.html">To Page 04 -  </a></div>
+</body>
+</html>

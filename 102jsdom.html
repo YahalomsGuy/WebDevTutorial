@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./base/css/main.css">
+    <script src="main.js"></script>
+
+</head>
+<body>
+<div class="head">
+    DOM - Document Object Model  
+</div>
+<div>
+    When a Web-Page is loaded, the browser creates a DOM of the page,<br> 
+    constructed and presented in JS as a tree of objects
+</div>
+
+<img src="./images/DOMtree.jpg" alt="DOMtree" style="width: 700px;">
+<div>The javascript code document.queryselector('tasyntax'); <br>
+    will return this result in the console.log because it calls the class in this block</div>
+<pre><code data-language="javascript">
+document.queryselector('tasyntax');
+</code></pre>
+
+
+<textarea class="tobechanged" style="height: 30px;">
+    Original text in the html 
+</textarea>    
+<div>while the original code in thehtml is </div>
+<div class="tobechanged" style="height: 50px;">
+    Original text in the html
+</div> 
+
+
+
+
+<div><h2>Different ways to call selectors</h2></div>
+
+
+<pre><code data-language="javascript">
+document.querySelector('.class')        //for Class Selector
+
+document.querySelector(''#id')          
+    ==                                  //for id selector
+document.getElementById(''.className')
+</code></pre>
+
+<div><h2>Typical uses of DOM</h2></div>
+<div>
+    <table>
+        <th>property</th>
+        <th>Description</th>
+        <tr>
+            <td>Active Element</td>
+            <td>Returns the current focused element in the document</td>
+        </tr>
+        <tr>
+            <td>addEventListener()</td>
+            <td>Attaches an event handler to the document</td>
+        </tr>
+        <tr>
+            <td>Body</td>
+            <td>Sets or returns the document's body (body element></td>
+        </tr>   
+        <tr>
+            <td>Cookie</td>
+            <td>Returns all name/value pairs of cookies in the document</td>
+        </tr>
+        <tr>
+            <td>createElement()</td>
+            <td>Creates an Element node</td>
+        </tr>
+        <tr>
+            <td>documentElement</td>
+            <td>Returns the document element of the html element</td>
+        </tr>
+        <tr>
+            <td>getElementById(), <br>
+                getElementByClassName(), <br>
+                getElementsByName(), <br>
+                getElementsByTagName()
+            </td>
+            <td>Returns element(s) by name/class/tag/id</td>
+        </tr>
+        <tr>
+            <td>querySelector()</td>
+            <td>Returns the first element that matches a specified CSS selector</td>
+        </td>
+        <tr>
+            <td>querySelectorAll()</td>
+            <td>Returns all the elements that matche a specified CSS selector</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>Sets or returns the title of the document</td>
+        </tr>
+    </table>
+</div>
+<pre><code data-language="javascript"></code></pre>
+
+<a href="./index.html">back to main page</a>
+<script src="./js/102.js"></script>
+<script src="./base/js/rainbow-custom.min.js"></script>
+</body>
+</html>

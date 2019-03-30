@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>05 - AND / OR Conditions</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+</head>
+<body>
+    <div class="head">Conditions</div>
+    <table>
+        <th>Operator</th>
+        <th>Usage</th>
+        <th>description</th>
+        <tr>
+            <td>Logical AND (&&)</td>
+            <td>exp1 && exp2</td>
+            <td>Only if both are TRUE</td>
+        </tr>
+        <tr>
+            <td>Logical OR (||)</td>
+            <td>exp1 || exp2</td>
+            <td>at least one of them is TRUE</td>
+        </tr>
+        <tr>
+            <td>Logical NOT (!)</td>
+            <td>!exp</td>
+            <td>is not TRUE</td>
+        </tr>
+        <tr>
+            <td>Precendence</td>
+            <td>ex1 && ex2 || ex3 && ex4</td>
+            <td>AND checked before OR</td>
+        </tr>
+    </table>
+    <div class="head">Ternary Operator</div>
+    <div>a short way to write a condition</div>
+    <textarea class="tasyntax">
+    var beverage = (age >= 21) ? "Beer" : "Juice";
+    </textarea>
+    <textarea class="taneutral">
+    var resultHolder = (condition) ? TRUE value : FALSE value;
+    </textarea>    
+    <div>
+        <ul>
+        <li>Definition of variable beverage</li>
+        <li>Checking a condition (with a different varible in this case)</li>
+        <li>?</li>
+        <li>What to return if TRUE</li>
+        <li>:</li> 
+        <li>What to return if FALSE</li>
+        <li>;</li>
+        the new variable will contain one of the strings    
+        </ul>
+    </div>
+    <div>With multiple conditions:</div>
+    <textarea class="taneutral" style="height: 80px;">
+    var resultHolder = (condition) ? value1
+                      :(condition) ? value2
+                      :(condition) ? value3
+                      :value1;
+    </textarea>    
+        
+    
+    
+     <script src="./js/page05.js"></script>
+    <div><a href="page06.html">To Page 06</a></div>
+</body>
+</html>

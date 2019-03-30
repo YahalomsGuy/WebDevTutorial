@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ES6 intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./base/css/main.css">
+</head>
+
+<body>
+    <div class="head">Introduction to ES6</div>
+    <div>ES6, stands for ECMAscript version 6, is the standard for new additions to Javascript</div>
+    <div>every year, a new version of ES is created, adding more abilities to JavaScript base library</div>
+
+    <div>
+        <h2>var hoisting</h2>
+    </div>
+    <div>a declaration of a variable with var is handled even if should not , by the flow</div>
+    <pre><code data-language="javascript">
+    if(false) {
+        var phrase = "Hello";
+    }
+    console.log(phrase);
+    </code></pre>
+    <div>the variable is declared but not assigned</div>
+    <div>This is one of the reason <b><u>var was deprecated in ES6!!!</u></b></div>
+    <div>
+        <h1>Change 1:</h1>
+    </div>
+    <p>Instead of var, ES6 started working with....</p>
+    <div>
+        <h2>let & const</h2>
+    </div>
+    <div>let & const are valid inside the block they are defined in and in it's decendents</div>
+    <br>
+    <ul>
+        <li><b>let</b> is a variable that may change during the flow</li>
+        <li><b>const</b> is a read-only variable whose value will never change,
+            <ul>
+                <li>Usually declared in CAPITAL_LETTERS</li>
+                <li>Must be declared and assigned together</li>
+            </ul>
+        </li>
+    </ul>
+    <div>declaration of let and const must be before the reference to them</div>
+    <pre><code data-language="javascript">
+    const STR;                  //error
+
+    STR = 'hello'               //error
+
+    const myStr = 'hello!';    //working but not best practice
+
+    const MY_STR = 'hello!';   //The right way
+    </code></pre>
+    <div>When a const is an object, the attributes of the object can be changed, although its a const.</div>
+    <pre><code data-language="javascript">
+    const PERSON = {
+        Name: 'David';
+    };
+    PERSON.Name = 'Moshe';              //allowed
+    </code></pre>
+    <div>To block all attributes of a const object from changing, declare the const with Object.freeze</div>
+    <pre><code data-language="javascript">
+    const PERSON= Object.freeze({
+        Name: 'David',
+    })
+    PERSON.Name = 'Moshe';                           //will not be assigned
+    console.log('PERSON: ' , PERSON.Name)            //will return David
+    </code></pre>
+
+    <script>
+    </script>
+    <a href="./index.html">back to main page</a>
+    <script src="./base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

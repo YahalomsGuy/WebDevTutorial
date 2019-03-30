@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="/base/css/main.css">
+    <title>JS - Arrays</title>
+</head>
+<body>
+<div class="head">Arrays in JavaScript</div>
+<div>Basic Syntax:</div>
+<textarea class="tasyntax">
+    var arrayName = [item0, item1, item2];
+</textarea>
+<p>An Array can contain multiple types of items</p>
+<div>An Array can have an Array as an item.</div>
+<textarea class="tasyntax">
+    var Array = ['string1', 5 , [0,1,2], true]
+</textarea>
+<textarea class="tasyntax" style="height: 90px;">
+    var nums = [1, 1, 2, 3, 5, 8, 13, 21]
+    for ( var i = 0 ; i < nums.length; i++) {
+        console.log('in position ' + i + ' there is : ' + nums[i]);
+    }
+</textarea>
+<div>Array with various types</div>
+<textarea class="tasyntax" style="height: 140px;">
+var Array1 = 
+[
+    'someString', 
+    5 , 
+    [ 0, 'oneMoreString', 2], 
+    true, 
+    { name: 'Guy', age: 46}
+]
+</textarea>
+<div>Assignment and additions</div>
+<textarea class="tasyntax" style="width: 600px;height: 140px;">
+    Array1[1] = 7;                      //Addition to the array
+    Array1[4].lastName = 'Maimon';      //addition to the Object
+    Array1[Array1.length] = [3,4,5,6];  //Addition of an Array to the end
+</textarea>
+<div>And then </div>
+<textarea class="tasyntax">
+    console.log(Array1[Array1.length-1]);
+</textarea>
+<div>Will result</div>
+<textarea class="taneutral">
+    [3, 4, 5, 6]
+</textarea>
+<div>the last item in the main array</div>
+<div>And</div>
+<textarea class="tasyntax" style="width: 600px;">
+    console.log(Array1[Array1.length-1][Array1[Array1.length-1].length-1]);
+</textarea>
+<div>Will result</div>
+<textarea class="taneutral">
+    6
+</textarea>
+<div>which is the last item in the array which is the last item in the Array</div>
+
+<textarea class="tasyntax"></textarea>
+<textarea class="tasyntax"></textarea>
+<textarea class="tasyntax"></textarea>
+<script src="./js/index.js"></script>
+<div><a href="page02.html">To Page 02 - Array Methos</a></div>
+</body>
+</html>

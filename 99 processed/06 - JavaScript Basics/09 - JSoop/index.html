@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>JS oop</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/base/css/main.css">
+    
+</head>
+<body>
+<div class="head">
+    Object Oriented Programming (OOP) in JavaScript
+</div>
+<br>
+<div>
+    <b>Object</b> - a variable that has child variables and methods
+</div>
+<hr>
+<div>Declaration of Empty object:</div>
+<textarea class="tasyntax">var person = { };</textarea>
+<div>Declaration of object with child objects:</div>
+<textarea class="tasyntax" style="height: 180px;">
+var person={
+    age: '46',                              //child variable
+    name: {                                 //child object
+        first: 'Guy',                       //grand-child variable
+        last: 'Maimon'
+    },
+    address: 'Moscow';      
+    greetingMsg: function() {               //child function
+        console.log('My Name Is Guy!');     
+    }
+};
+</textarea>
+<div>calling the object</div>
+<textarea class="tasyntax">console.log(person);</textarea>
+<div>calling child object</div>
+<textarea class="tasyntax">
+person.age;                         //child
+</textarea>
+<textarea class="tasyntax">
+person.name.first;                  //grand-child
+</textarea>
+<textarea class="tasyntax">
+person.name;                        //child that has grand-childs
+</textarea>
+<textarea class="tasyntax">
+person.greetingmsg();               //child function
+</textarea>
+<div>Another syntax of accessing a child object</div>
+<textarea class="tasyntax">
+person['age'];                      //child
+</textarea>
+<textarea class="tasyntax">
+person['name']['first'];             //grand-child
+</textarea>
+<textarea class="tasyntax">
+person['name'];                        //child that has grand-childs
+</textarea>
+<textarea class="tasyntax">
+person['greetingMsg']();            //child function
+</textarea>
+<div>the Syntaxes can be mixed and combined like:</div>
+<textarea class="tasyntax" style="height: 50px">
+person['name'].first;
+person.name['first'];
+</textarea>
+<div>Assignment of variable to child object</div>
+<textarea class="tasyntax" style="height:80px;">
+var ageProperty = 'age';
+var nameProperty = 'name';
+
+console.log(person[ageProperty]);
+</textarea>
+<div>Can be manipulated in RunTime</div>
+<textarea class="tasyntax" style="height:80px;">
+var userInput = prompt("What data do you want to bring? ");
+
+console.log(person[userInput]);
+</textarea>
+<div>input of a name of a property of the object</div>
+<textarea class="taneutral">age</textarea>
+<div>will return the data in the property</div>
+<textarea class="taneutral">46</textarea>
+<div>Assignment of data to object properties</div>
+<textarea class="tasyntax">person.age = 17;</textarea>
+<textarea class="tasyntax">person.name.first = 'ofek';</textarea>
+<div>This Object</div>
+<div>a reference to the same object from within the object</div>
+<textarea class="tasyntax" style="height:110px;">
+var person2 = { 
+    name: 'David' , 
+    greeting: function() { 
+        console.log('Hi, My name is ' + this.name ); 
+    }
+}
+</textarea>
+<div>when calling </div>
+<textarea class="taneutral">person2.greeting();</textarea>
+<div>will return</div>
+<textarea class="taneutral">
+Hi, My name is David
+</textarea>
+<textarea class="tasyntax"></textarea>
+
+
+<h1></h1>
+<script src="js/page01.js"></script>
+<div><a href="page02.html">To Page 02 - </a></div>
+</body>
+</html>

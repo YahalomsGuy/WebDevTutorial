@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pets Selector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="./base/css/main.css"> -->
+</head>
+<body>
+<select name="petSelector" id="pets" onchange="changePet()">
+    <option value="Cats">Cats</option>
+    <option value="Dogs" selected>Dogs</option>
+    <option value="Foxes">Foxes</option>
+</select>
+<br>
+<div>
+<button onclick="makeRequest()">get Random</button>
+</div>
+<input type="image" src="" alt="" width="500px" class="image">
+<!-- https://randomfox.ca/images/29.jpg -->
+<script>
+    var selectedPet = 'Dogs';
+    var webAddr = 'https://dog.ceo/api/breeds/image/random';
+    function changePet(){
+        selectedPet = document.querySelector('#pets').value;
+        switch(selectedPet) {
+            case 'Dogs':
+                webAddr = 'https://dog.ceo/api/breeds/image/random';
+                break;
+            case 'Cats':
+                webAddr = 'https://aws.random.cat/meow';
+                break;
+            case 'Foxes':
+                webAddr = 'http://randomfox.ca/floof';
+                break;
+        }
+    }
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.responseType = 'json';
+            httpRequest.onload = function() {
+            if (httpRequest.status === 200){
+                console.log(httpRequest.response);
+                var json = httpRequest.response;
+                console.log('json response', json);
+                switch(selectedPet) {
+                    case 'Dogs':
+                        document.querySelector('.image').src = json.message;
+                        break;
+                    case 'Cats':
+                        document.querySelector('.image').src = json.file;
+                        break;
+                    case 'Foxes':
+                        document.querySelector('.image').src = json.link;
+                        break;
+                }
+            } else {
+                alert('There was a problem with the request. \r\n The Page has returned error number: ' + httpRequest.status)
+            }
+        };
+        httpRequest.open('GET', webAddr);
+        httpRequest.send();
+    }
+    </script>
+   
+    
+<pre><code data-language="javascript"></code></pre>
+<a href="./index.html">back to main page</a>
+<!-- <script src="./base/js/rainbow-custom.min.js"></script> -->
+</body>
+</html>

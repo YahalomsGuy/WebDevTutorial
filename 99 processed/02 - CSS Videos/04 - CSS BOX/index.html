@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>03-CSS</title>
+        <!-- <link rel="stylesheet" type="text/css" media="screen" href="./css/styleClasses.css" /> -->
+    <style>
+        #check {
+            background-color: greenyellow;
+            color: blue;
+            font-size: 20px;
+        }
+        #check::first-letter{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        .form , .formRequired {
+            color: blue;
+            font-size: 20px;
+        }
+
+        .formRequired::before{
+            color: red;
+            font-weight: bold;
+            content: '*'
+        }
+
+        .form::after{
+            color: green;
+            font-weight: bold;
+            content: " *not required"
+        }
+    </style>
+    </head>
+    <body>
+         <p id="check"> The p element is using the <b>#id</b> selector</p>
+         <p id="check"> The first letter bigger and bold with <b>#id::first-letter</b> selector</p>
+        
+         <span class="formRequired"> FirstName</span><br><span>   red prefix from class selector</span>
+         <div><input type="text" placeholder="Type Your first here"/><br></div>
+         <span class="form"> Last Name</span><br><span>  the green suffix added by the class selector</span>
+         <div><input type="text" placeholder="Type Your last name"/><br></div>
+         <div><img src="../03 - CSS/images/cssproperties.jpg" width= 600px title="selector properties"/></div>
+        <a href="page02.html">To Page 02 - Box Model</a>
+    </body>
+</html>

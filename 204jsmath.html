@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTML forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./base/css/main.css">
+    <script src="main.js"></script>
+
+</head>
+<body>
+<div class="head">JS - Math function</div>
+<div>set of mathematical manipulations on items</div>
+<pre><code data-language="javascript">
+    Math.PI;
+    Math.round(num);        ----> returns closest integer
+    Math.pow(a,b);          ----> Returns a^b
+    Math.sqrt(num);         ----> Returns Square Root 
+    Math.abs(num);          ----> Returns the absolute value
+    Math.ceil(num);         ----> Returns the high next integer
+    Math.floor(num);        ----> Returns the low next integer
+    Math.max(a, b, c, d);   ----> Returns the highest value
+    Math.min(a, b, c, d);   ----> Returns the lowest value
+    Math.random();          ----> Returns a value between 0 and 1
+</code></pre>
+
+<pre><code data-language="javascript">
+function randBetween(min,max){
+    max = Math.ceil(max);
+    min = Math.floor(min);
+    return Math.floor(Math.random() * (max-min)) + min;
+}
+var a = 6;
+var b = 200;
+
+console.log(randBetween(a,b));
+</code></pre>
+
+<a href="./index.html">back to main page</a>
+<script src="./base/js/rainbow-custom.min.js"></script>
+</body>
+</html>

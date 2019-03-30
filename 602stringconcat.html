@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ES6 intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./base/css/main.css">
+</head>
+
+<body>
+    <div class="head">String Templates</div>
+    <div>regular string concatenation in Javascript prior to ES6 was:</div>
+    <pre><code data-language="javascript">
+    let a=3;
+    let b=5;
+    console.log('The sum of ' + a + ' and ' + b + 
+    ' is ' + (a + b) + ' and not ' + (a*b) + '.'')
+    </code></pre>
+    <div>which is very hard to write, read and understand</div>
+    <div>
+    </div>
+    <div>In ES6, JavaScript has evolved in the string concatenation and since , using string templates</div>
+
+    <pre><code data-language="javascript">
+        let a=3;
+        let b=5;
+        console.log(`The sum of ${a} and ${b} is ${a + b} 
+        and not ${a * b} .`)
+
+    </code></pre>
+    <div>NOTES:</div>
+    <ul>
+        <li>1: ` (backtick) and not ' (tick) is used for wrapping of the text!!!</li>
+        <li>2: the string inside ` is a MultiLine string!!</li>
+    </ul>
+    </code>
+    </pre>
+    <div class="taerror">
+        An Arrow function does not create his own object and does not have their own context<br> Using 'this' reference will alwats refer to the window level
+    </div>
+    <a href="./index.html">back to main page</a>
+    <script src="./base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

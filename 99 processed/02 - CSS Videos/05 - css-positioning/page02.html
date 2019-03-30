@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>CSS Specificity</title>
+    <style>
+        .div1{
+            color: red !important;
+        }
+        .div1{
+            color: blue;
+        }
+        div {
+            color: red;
+        }
+        #div2-id {
+            color: orange;
+        }
+        .div2-class {
+            color: pink;
+        }
+        .a .b .c {
+            color: green;
+        }
+
+        .a .b {
+            color: black;
+        }
+        .fontsize {
+            font-size: 2em;
+        }
+        .box1 {
+            background: orange;
+            width: 200px;
+            height: 100px;
+            color: white;
+        }
+        .box2 {
+            background: green;
+            width: 50%;
+            height: 200px;
+            color: white;
+        }
+        .box3 {
+            background: orange;
+            width: 200px;
+            height: 100px;
+            color: white;
+            display: inline-block;
+        }
+        .box4 {
+            background: green;
+            width: 50%;
+            height: 200px;
+            color: white;
+            display: inline-block;
+        }
+        .box5 {
+            background: orange;
+            width: 200px;
+            height: 100px;
+            color: white;
+            float: right;
+        }
+        .box6 {
+            background: green;
+            width: 50%;
+            height: 200px;
+            color: white;
+            float: left;
+        }
+
+        
+    </style>
+</head>
+<div class="head" style="color: black">
+    CSS Specificity<br><br>
+</div>
+<body>
+    
+    <img src="images/cssPriority.jpg" width=300px />
+    
+    <div class="div1">
+        Level 1 - strongest is  <b>!important</b> in the design: <br> 
+        text is red although should be run over by 2nd definition <br>
+        because in the first selector we wrote important
+    </div>
+    <br>
+    <div style="color: green">
+        Level 2 - a <b>style</b> in the header of the block <br> 
+        text is green because defined locally<br>
+        and not red by the div selector
+    </div>
+    <br>
+    <div class="div2-class" id="div2-id">
+        Level 3 - a <b>style</b> in ID is stronger than style in CLASS<br> 
+        text is yellow because defined in the ID<br>
+        and not Orange by the class selector
+    </div>
+    <div class="div2-class" id="div2-id">
+        Level 4 - a <b>style</b> in ID is stronger than style in CLASS<br> 
+        text is yellow because defined in the ID<br>
+        and not Orange by the class selector
+    </div>
+    <br>
+    <div class="a">
+        <div class="b">
+            <div class="c">
+                Level 5: value of inharitance (a,b,c) classes<br>
+                since the is a selector with all 3 - in overcomes <br>
+                the other selector with a and b only
+            </div>
+        </div>
+    </div>
+    <br>
+    <p class="head">Sizes</p>
+    <div style="font-size: 1em">this is the font size 1em - 16px</div>
+    <div style="font-size: 2em">this is the font size 2em - 32px</div>
+    <div style="font-size: 3em">this is the font size 3em - 48px</div>
+
+    <div class="box1">width is fixxed</div>
+    <div class="box2">width is 50% of the windows width</div>
+    <br>
+    <div class="box3">width is fixxed with display: inline-block</div><div class="box4">width is 50% of the windows width with display: inline-block and without crlf between the boxes</div>
+    <br>
+    <div>
+        <div class="box5">floating right, although first in code</div>
+        <div class="box6">floating left, although second in code</div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <div style="color: black;font-size: 30px">
+        <div>end of video 5</div>
+        <div>end of CSS</div>
+    </div>
+</body>
+</html>

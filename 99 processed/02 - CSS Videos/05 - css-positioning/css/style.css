@@ -1,0 +1,19 @@
+.head {
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+}
+.tasyntax {
+    width: 350px;
+    height: 16px;
+    background-color: rgb(205, 255, 214);
+}
+.tareg {
+    width: 300px;
+    background-color: lightyellow;
+}
+.tabig {
+    width: 400px;
+    height: 150px;
+    background-color: lightyellow;
+}

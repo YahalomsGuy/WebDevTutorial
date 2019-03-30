@@ -1,0 +1,50 @@
+.head {
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+}
+.tasyntax {
+    width: 500px;
+    height: 16px;
+    background-color: rgb(205, 255, 214);
+}
+.tasyntaxsmall {
+    width: 280px;
+    height: 16px;
+    background-color: rgb(205, 255, 214);
+}
+.taerror {
+    width: 500px;
+    height: 16px;
+    background-color: rgb(255, 205, 208);
+    color: red;
+}
+.taneutral {
+    width: 500px;
+    height: 16px;
+    background-color: rgb(253, 252, 159);
+    
+}
+.tareg {
+    width: 300px;
+    background-color: lightyellow;
+}
+.tabig {
+    width: 400px;
+    height: 150px;
+    background-color: lightyellow;
+}
+.tobechanged {
+    width: 500px;
+    height: 16px;
+    background-color: rgb(253, 251, 107);
+
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="/base/css/main.css">
+    <title>JS - Arrays</title>
+</head>
+<body>
+<div class="head">JS - Filter,Map,Find,findIndex</div>
+<div class="head">arr.filter();</div> 
+<textarea class="tasyntax" style="height: 60px;">
+    arr.filter(function(array){
+        return condition
+    })
+</textarea>
+<textarea class="tasyntax" style="height: 160px">
+var words = ['spray', 'employee', 'limit', 
+            'encyclopedia', 'elite', 'destruct'];
+
+const result = words.filter(
+    function(word) {
+        return word.length > 5;
+    }
+);
+console.log(result);
+</textarea>
+<div>will return an array:</div>
+<textarea class="taneutral">
+    ["employee", "encyclopedia", "destruct"]
+</textarea>
+<div>The result will always be an array (even if no results returned)</div>
+<div><b>The function can be extracted from the filter and be represented by a variable</b></div>
+<textarea class="tasyntax" style="height: 140px">
+    var words = ['spray', 'employee', 'limit', 
+                'encyclopedia', 'elite', 'destruct'];
+    var myLength = prompt();
+    var filterType = function(word)
+        {
+            return word.length > myLength;
+        };
+    var result = words.filter(filterType);
+</textarea>
+<div>To sreach all the array for all items with some letters inside</div>
+<textarea class="tasyntax" style="width: 600px;height: 170px">
+var words = ['Spray', 'employee', 'limit', 'encyclopedia', 'elite', 'destruct'];
+function filterItems(query){
+    return words.filter(
+        function(e1) {
+            return e1.toLowerCase().indexOf(query.toLowerCase()) > -1
+        }
+    )
+}
+console.log(filterItems(prompt()));
+</textarea>
+<div class="head">arr.find();</div>
+<div>Returns only the first item answering the condition</div>
+<pre><code data-language="javascript">
+var nums = [5, 12, 8, 130, 44];
+var found = nums.find(
+    function(element) {
+        return element > 10;
+    }
+);
+console.log(found);
+</code></pre>
+<div class="head">Array.join()</div>
+<div>makes a list of values from an array</div>
+<pre><code data-language="javascript">
+arr.join(seperator);
+</code></pre>
+<div>Seperator defined as string, default is , (comma)</div>
+<div class="head">Arr.map(callBack)</div>
+<div>transform the data in an array and create a new array</div>
+
+<pre><code data-language="javascript">
+var nums = [5, 12, 8, 130, 44];
+    var mapped = nums.map(
+    function(x){
+        return x * 2
+    }
+);
+console.log(mapped);
+</code></pre>
+<div>Will Return</div>
+<textarea class="taneutral">
+[10,24,16,260,44]
+</textarea>
+<div class="head">arr.Reduce</div>
+<div>Returns the summ of all items is the array and create a math manipulation with StartNumber</div>
+<pre><code data-language="javascript">
+var arr = [1,2,3,4];var reducer = function(acc, StartNumber){
+    return acc+startNumber;
+}
+arr.reduce(reducer);
+</code></pre>
+<pre><code data-language="javascript"></code></pre>
+<pre><code data-language="javascript"></code></pre>
+<pre><code data-language="javascript"></code></pre>
+<textarea class="tasyntax"></textarea>
+<textarea class="tasyntax"></textarea>
+<textarea class="tasyntax"></textarea>
+<textarea class="tasyntax"></textarea>
+<textarea class="tasyntax"></textarea>
+<script src="./js/page03.js"></script>
+<script src="/base/js/rainbow-custom.min.js"></script>
+<div><a href="page04.html">To Page 04 - Math </a></div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>Intro to JS</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    
+</head>
+<body>
+<div class="head">
+    Basics of JS 
+</div>
+<div>
+    Variable Declaration:
+</div>
+<textarea class="tasyntax">
+    var myVariable = "David";
+</textarea>
+<br>
+<textarea class="tasyntax">
+    var myNumber = 300;
+</textarea>
+<br>
+<div>PopUp Window</div>
+<textarea class="tasyntax">
+    alert(myVariable);
+</textarea>
+<div>Input Box</div>
+<textarea class="tasyntax">
+    prompt()        alert with input box
+</textarea>
+<div>Console</div>
+<textarea class="tasyntax">
+    console.log('this is a log to console:', myNumber)
+</textarea>
+<div>Assignments</div>
+<textarea class="tasyntax">
+    var name = 'Guy' , age='46';
+</textarea>
+<textarea class="tasyntax">
+    var age1 = 30, age2 = age1 + 4
+</textarea>
+<div>When a variable is not defined - </div>
+<textarea class="taerror">
+    Uncaught ReferenceError: age1 is not defined
+</textarea>
+<div>When a variable was called before it was defined</div>
+<textarea class="taneutral">
+    undefined
+</textarea>
+<div>A variable can change its type in runtime</div>
+<textarea class="tasyntax" style="height: 50px">
+    var foo = 42;   // defined as a number
+    foo = 'guy';    // now its a string
+    foo = true;     // not its a boolean
+</textarea>
+<div>Remarks (like c</div>
+<textarea class="tasyntax">
+    //  single line
+</textarea>
+<textarea class="tasyntax">
+    /* */ - range-multiline
+</textarea>
+<div>Operator</div>
+<textarea class="tasyntax" style="height: 200px">
+regular    + - * / 
+comparison  ===         Type and Value (77 === '77' -> false)
+comparison  ==          Value only (77 == '77' -> true)
+not         ! 
+not equal   !===
+maths       x += y      x = x + y
+            x -= y      x = x - y
+            x *= y      x = x * y
+            x /= y      x = x / y
+reminder    x%=y        x = x % y
+exponent    x**=y       x = x ** y
+</textarea>
+<div>Text concatenation</div>
+<textarea class="tasyntax">
+    console.log('guy' + ' ' + 'and ' + 'Natasha' )
+</textarea>
+<div>Conditions</div>
+<textarea class="tasyntax" style="height: 120px">
+    if(something === something ){
+
+    }else if{
+
+    }else{
+
+    }
+</textarea>
+<div>Functions</div>
+<textarea class="tasyntax" style="height: 150px">
+    // Define function
+    function myFunction(arg1,arg2){
+        var result = arg1 * arg2;
+        return result;
+    }
+
+    // Call the function
+    myFunction(var1,var2);
+</textarea>
+<textarea class="tasyntax"></textarea>
+<textarea class="tasyntax"></textarea>
+<textarea class="tasyntax"></textarea>
+<textarea class="tasyntax"></textarea>
+
+
+<h1></h1>
+<script src="js/main.js"></script>
+<div><a href="page02.html">To Page 02 - DOM</a></div>
+</body>
+</html>

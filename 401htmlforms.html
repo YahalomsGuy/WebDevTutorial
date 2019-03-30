@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTML forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./base/css/main.css">
+    <script src="main.js"></script>
+
+</head>
+<body>
+
+<style>
+    label {
+        display: inline-block;
+    }
+    input {
+        background-color: blanchedalmond;
+        color: blue
+    }
+    table, tr, td {
+        padding: 15px;
+    }
+</style>
+<div class="head">Forms in HTML</div>
+<div>The basic syntax of a form is:</div>
+<pre><code data-language="javascript">
+    <form action="" method=""></form>
+</code></pre>
+<div>in the opening statement of the form we define:</div>
+<div>The location of the server to speak with:</div>
+<pre><code data-language="javascript">
+    action="https://www.WebSite.com/pageName.html"   
+    or
+    action="./somepage.html"     //in my webserver, relative folder
+    or 
+    action=""                   //in the same page
+</code></pre>
+<div>And the direction of the action</div>
+<pre><code data-language="javascript">
+    method="get"        //to receive data from the server
+    or
+    method="post"       //to send data to the server
+</code></pre>
+<div><h2>Objects of the form:</h2></div>
+<div><h3>Label</h3></div>
+<pre><code data-language="javascript">
+    <label for="ourName">This Is A Label</label>
+    for     -> relativity to other objects 
+</code></pre>
+<label for="ourName">This Is A Label</label>
+<div><h3>Input</h3></div>
+<pre><code data-language="javascript">
+    <input name="ourName" id="say" value="Hi" />
+    name    -> used while sending data
+    id      -> tag and relativity
+    value   -> the default text
+    type    -> type of input box (default is text and can be discarded)
+</code></pre>
+<input name="ourName" id="say" value="Hi" />
+<br><br>
+<div>When the <b>for</b> of the <b>label</b> is the same as</div>
+<div>the <b>id</b> of the <b>input</b></div>
+<div>pressing on the <b>label</b> will set the <b>focus</b> on the <b>input</b></div>
+<br>
+<div><h3>button</h3></div>
+<pre><code data-language="javascript">
+    <button>Send</button></div>
+</code></pre>
+<button>Send</button></div>
+<div>When the button is in a form, it has a <b>submit</b> action by default</div>
+<div>which means it will perform the method in the form to the action</div>
+<div><u>unther types of buttons in a form are:</u></div>
+<pre><code data-language="javascript">
+    <button type="submit">Send</button>             //default, if not specified
+    <button type="reset">Clear Form</button>        //to default - clear form
+    <button type="button">click me</button>         //regular button 
+    <button type="menu">Clear Form</button>         //menu button 
+</code></pre>
+<a href="./index.html">back to main page</a>
+<script src="./base/js/rainbow-custom.min.js"></script>
+</body>
+</html>

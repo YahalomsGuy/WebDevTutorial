@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>03 - Strings</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+    
+</head>
+<body>
+    <div class="head">String Manipulations and queries</div>
+    after a string variable was created as 
+    <textarea class="tasyntax">var myString = 'Guy Maimon'</textarea>
+    <table>
+    <tr>
+    <td> <textarea class="tasyntaxsmall">
+    myString.length
+    </textarea></td>
+    <td>
+        10
+    </td>
+    <td>Returns the length of thestring</td>
+    </tr>
+    <tr>
+    <td><textarea class="tasyntaxsmall">
+    myString[2]
+    </textarea></td>
+    <td>y</td>
+    <td>Returns a specific char from a string (0 based)</td>
+    </tr>
+    <tr>
+    <td><textarea class="tasyntaxsmall">
+    myString.indexof('imo')
+    </textarea></td>
+    <td>6</td>
+    <td>
+    Returns where the typed string starts from <br>
+    if not found, will return -1
+    </td>
+    </tr>
+    <tr>
+    <td><textarea class="tasyntaxsmall" ">
+    myString.includes('imo'))</textarea></td>
+    <td>TRUE</td>
+    <td>Returns TRUE if exists somewhere<br>
+    otherwise Returns FALSE<br>
+    </td>
+    </tr>
+    <tr>
+    <td><textarea class="tasyntaxsmall" style="height: 120px">if(myString.indexOf('Ma') !== -1)
+{
+    console.log("It's There");
+}else{
+    console.log("It's not There");
+}; 
+     
+    </textarea></td>
+    <td>It's There</td>
+    <td>
+    if(myString.indexOf('test') !== -1)<br>
+    Returns Ture if the exists in the string<br>
+    if not found, will return -1
+    </td>
+    </tr>
+    <tr>
+    <td><textarea class="tasyntaxsmall" ">
+    myString.toLowerCase()</textarea></td>
+    <td>guy maimon</td>
+    <td>converst all text to lower case</td>
+    </tr>
+    <tr>
+    <td><textarea class="tasyntaxsmall" ">
+    myString.toUpperCase()</textarea></td>
+    <td>GUY MAIMON</td>
+    <td>converst all text to upper case</td>
+    </tr>
+    <tr>
+    <td><textarea class="tasyntaxsmall" ">
+    myString.slice(5)</textarea></td>
+    <td>imon</td>
+    <td>Returns string after cutting # chars<br>
+    does not change the variable
+    </td>
+    </tr>
+    <tr>
+    <td><textarea class="tasyntaxsmall" ">
+    myString.slice(5,7)</textarea></td>
+    <td>im</td>
+    <td>Returns string after cutting #1 chars<br>
+    Returns all the chars until #2<br>
+    does not change the variable
+    </td>
+    </tr>
+    </table>
+ 
+    <script src="./js/page03.js"></script>
+    <div><a href="page04.html">To Page 04 - Loops</a></div>
+</body>
+</html>

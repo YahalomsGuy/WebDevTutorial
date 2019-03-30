@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ES6 SpreadOp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./base/css/main.css">
+</head>
+
+<body>
+    <div class="head">ES6+ Spread Operator</div>
+    <div>Spread operator '...' will take data from an array and send it as comma seperated values</div>
+    <div><u>Example1</u>:</div>
+    <pre><code data-language="javascript">
+    const nums = [1, 2, 3, 4];
+    console.log(...nums);
+    </code></pre>
+    <ul>
+        <li>Will return the values in the array</li>
+        <li>The code sent to the console.log is 1,2,3,4</li>
+    </ul>
+
+
+    <div><u>Example2</u>:</div>
+    <pre><code data-language="javascript">
+    //declaration of the function
+    function calc(x,y,z) {
+        return x * y + z;
+    }
+
+    // declaration of the array
+    const nums = [3, 5, 8];
+
+    //assignment of the values of the array as the operators in the function
+    console.log(cal(...nums);)
+
+    </code></pre>
+    <ul>
+        <li>Will return the result of calculation</li>
+    </ul>
+    <div>in JavaScript, assigning an object to another object creates a twin.</div>
+    <div>a change in the new object will affect the original object.</div>
+    <div>When declaring an object</div>
+    <pre><code data-language="javascript">
+    let person1 = {             
+        name = 'Guy',
+        age = 46
+    }
+    </code></pre>
+    <div>and assigning it to a now object</div>
+    <pre><code data-language="javascript">
+    let person2 = person1;</code></pre>
+    <div>when we modify a child in the new object</div>
+    <pre><code data-language="javascript">
+    person2.name = 'Ofek';</code></pre>
+    <div>the original object will be affected too</div>
+    <pre><code data-language="javascript">
+    console.log(person1.name)   //will return 'Ofek'</code></pre>
+    <div>Instead, Spread Operator can be used to create a duplicate of the object, that will have its own life</div>
+    <pre><code data-language="javascript">
+    let person2 = {...person1};      //assigning old boject to a new object
+    person2.name = 'Ofek'            //modifying a child object in the new object
+    console.log(person1.name);       //will return 'Guy' 
+    //Does not affect the original object
+    </code></pre>
+    <div>Although this will make a duplicate of the object, a child object will still be a linked clone</div>
+    <pre><code data-language="javascript">
+    let grandpa = {
+        name: 'Yosef',
+        age: 80,
+        father: {
+            name: 'Meni',
+            age: 50
+            kid: {
+                name: 'Snir',
+                age: 17
+            } 
+        }
+    };
+    </code></pre>
+    <div>And changing a value of a child object in one object</div>
+    <pre><code data-language="javascript">
+    let grandpa2 = {...grandpa1
+    };
+    grandpa2.name = 'Avraham';
+    grandpa2.father.name = 'Itzhak';
+    grandpa2.father.kid.name = 'Rave';
+    </code></pre>
+    <div>will affect the other</div>
+    <pre><code data-language="javascript">
+    grandpa1:
+        name: "Yosef"
+        age: 80,
+        father: 
+            name: "Itzhak",
+            age: 50
+            kid:
+                name: "Rave"    
+                age: 17
+    </code></pre>
+    <div>The best way to create a full duplicate of object with child objects is with</div>
+    <div>
+        <h2>JSON.stringify</h2>
+    </div>
+    <pre><code data-language="javascript">
+    grandpa2 = JSON.parse(JSON.stringify(grandpa1));
+    </code></pre>
+    <div>This way each duplicate will have its own life , including its decendents</div>
+
+    <script>
+        let grandpa1 = {
+            name: 'Yosef',
+            age: 80,
+            father: {
+                name: 'Meni',
+                age: 50,
+                kid: {
+                    name: 'Snir',
+                    age: 17
+                }
+            }
+        };
+
+        grandpa2 = JSON.parse(JSON.stringify(grandpa1));
+
+        grandpa2.name = 'Avraham';
+        grandpa2.father.name = 'Itzhak';
+        grandpa2.father.kid.name = 'Rave';
+
+        console.log(grandpa1);
+        console.log(grandpa2);
+
+        let person1 = {
+            name: 'Guy',
+            age: 46
+        };
+        let person2 = {
+            ...person1
+        };
+        person2.name = 'Ofek';
+        console.log(person2.name)
+        console.log(person1.name)
+
+        //declaration of the function
+        function calc(x, y, z) {
+            return x * y + z;
+        }
+        // declaration of the array
+        const nums = [3, 5, 8, 11];
+        //assignment of the values of the array as the operators in the function
+        console.log('the result is:', calc(...nums));
+    </script>
+    <a href="./index.html">back to main page</a>
+    <script src="./base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

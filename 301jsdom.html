@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTML forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./base/css/main.css">
+    <script src="main.js"></script>
+
+</head>
+<body>
+<div class="head">JS - DOM manipulation</div>
+<div style="color: green; font-weight: bold;">-------- The last chapter was added by JavaScript--------</div>
+<div>JavaScript can query, control and manipulate </div>
+<div>objects of the HTML Document Object Model</div>
+<a href="./102jsdom.html" target="_blank">Introduction to DOM </a><br>
+<img src="./images/DOMtree.jpg" style="width: 700px;"/>
+<div class="head">the Document Object</div>
+<div>working on the top <b>HTML</b> element of the page and subeffiliates</div>
+<pre><code data-language="javascript">
+document.activeElement;             //Returns the current active element in the page
+document.title;                     //Returns the title of the page
+document.title = 'Changed by JS';   //Changes the title of the page
+document.body;                      //Returns all the content of the body element
+document.head;                      //Returns all the content of the head element
+....and many more
+</code></pre>
+<pre><code data-language="javascript">
+document.querySelector()            //Returns the first element that uses the selector
+document.querySelector('div')       //Returns the first div element
+document.querySelector('.head')     //Returns the first div with head class
+</code></pre>
+<pre><code data-language="javascript">
+document.querySelectorAll()         //Returns all the elements that uses the selector
+document.querySelectorAll('div')    //Returns all the div element
+document.querySelectorAll('.head')  //Returns all the divs with head class
+</code></pre>
+<pre><code data-language="javascript">
+var myDivs = document.querySelectorAll('div.head');
+myDivs.forEach(function(everyDiv){
+    console.log(everyDiv.innerHTML);  
+});
+</code></pre>
+<div>Will return all the div elements with head class</div>
+<br>
+<div><h2>Adding an html element with JS</h2></div>
+<pre><code data-language="javascript">document.createElement()</code></pre>
+<pre><code data-language="javascript">
+var e1 = document.createElement('div');                                 //create the element
+e1.innerHTML = 'This will be added where the call to the JS file is'    //add data to the element
+document.body.appendChild(e1);                                          //add them to the page
+</code></pre>
+<div>or</div>
+<pre><code data-language="javascript">document.querySelector('div.head').appendChild(e1);</code></pre>
+<div>to <b>add</b> it to the first found div.head element or</div>
+<pre><code data-language="javascript">document.querySelector('div.head').innerHTML = '<p>Replacing</p>';</code></pre>
+<div>to <b>replace</b> the first div.head</div>
+<br>
+<div><h2>another way is to add text instead of innerHTML</h2></div>
+<pre><code data-language="javascript">
+var e1 = document.createTextNode(' My Text');                                 //create the element
+document.body.appendChild(e1);                                          //add them to the page
+</code></pre>
+<div><h2>to create DOM element with loop</h2></div>
+<pre><code data-language="javascript">
+var ul = document.querySelector('ul');
+for(var index = 0; index < 10; index++){
+    var li = document.createElement('li');
+    li.className = 'itemAddedByJS'
+    li.textContent = 'list item number ' + index;
+    ul.appendChild(li);
+}    
+// Will find the first ul tag (here below - empty in the HTML)
+// and add list items to it with the text
+</code></pre>
+
+<ul></ul>
+<div>Just like appending, childs can be removed</div>
+<pre><code data-language="javascript">
+var el = document.querySelector('li');
+el.parentNode.removeChild(li);    
+</code></pre>
+<div>This removes <b>THE FIRST</b> itemfrom the list above</div>
+<div>it has removed list item number 0 that was added before</div>
+<hr>
+<br>
+<div><u>.childNode AND .children</u></div>
+<pre><code data-language="javascript">
+var body = document.body;
+for(var index = 0; index < body.childNode.length ; index++) {
+    console.log(body.childNode[index]);
+};
+</code></pre>
+<div>and</div>
+<pre><code data-language="javascript">
+var body = document.body;
+for(var index = 0; index < body.children.length ; index++) {
+    console.log(body.children[index]);
+};
+</code></pre>
+<div>both will return all the child objects of the selected element (body)</div>
+<div class="head">the Window Object</div>
+<div>working on the properties of the window of the page</div>
+<pre><code data-language="javascript">
+console;                            //Method for logging information
+document;                           //Returns the DOM
+history;                            //Returns the history object 
+innerWidth, innerHeight;            //Returns the size of the content window
+outerWidth, outerHeight;            //Returns the size of the browser window
+location;                           //Returns the location object for the window
+navigator;                          //Returns the Navigator object for the window
+</code></pre>
+
+<pre><code data-language="javascript"></code></pre>
+<a href="./index.html">back to main page</a>
+<script src="./js/301.js"></script>
+<script src="./base/js/rainbow-custom.min.js"></script>
+</body>
+</html>
