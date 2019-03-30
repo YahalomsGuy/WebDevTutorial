@@ -51,13 +51,38 @@
     <div>
         <h2>Connect your project from VScode to GitHub</h2>
     </div>
+    <div>when it comes to connection between local Git and GitHub, there are to ways to start working:</div>
+    <ul>
+        <li>To send the new repository from GitHub to the local comuter</li>
+        <li>To upload existing local project to the New Repository</li>
+    </ul>
+    <div>
+        <h3>GitHub ====> Local Repo</h3>
+    </div>
+    <div>To download the Repo just created in GitHub to the computer</div>
+    <ul>
+        <li>In the Terminal window type in:</li>
+        <pre class="taconsole"><code data-language="console">git clonehttps://github.com/.......... master</code></pre>
+    </ul>
+    <div>In the url, paste the url you copied to the clipboard from GitHub new repository</div>
+    <Div>This will create a new folder in the local computer with the same name of the repo.</Div>
+    <div>
+        <h3>Local Computer ====> Repo</h3>
+    </div>
     <div>Back in VScode, open the project you want to send to GitHub </div>
     <ul>
         <li>make sure the project is: initialized, added and committed in the local repository</li>
         <li>to send the project to GitHub Repository type in:</li>
         <pre class="taconsole"><code data-language="console">git push --set-upstream https://github.com/.......... master</code></pre>
         <div>In the url, paste the url you copied to the clipboard from GitHub new repository</div>
+        <div>This will upload all the content of the project to GitHub new created repo.</div>
+
+        <li>From this point and on, you can decide to</li>
+        <pre class="taconsole"><code data-language="console">git push</code></pre>
+        <div>your project to GitHub, but of-course, only after</div>
+        <pre class="taconsole"><code data-language="console">git commit -am "commitName"</code></pre>
     </ul>
+
 
     <pre><code data-language="javascript"></code></pre>
     <pre class="taconsole"><code data-language="console"></code></pre>
