@@ -5,22 +5,24 @@ let app = express();
 app.use(cors());
 const webServerPort = 8500;
 
-
-
 app.get('/', function(req, res) {
-    res.send(200, { 'Content-Type': 'text/json' })
-    res.send('Hello World')
-    fs.readFile('my.json', (err, content) => {
-        console.log(content);
-        response.write(content);
-        response.end();
-    });
+
+    res.status(200).send('Hello World');
+
+
+    // fs.readFile('my.json', (err, content) => {
+    //     console.log(content);
+    //     response.write(content);
+    //     response.end();
+    // });
 });
 
 
 app.get('/guy', function(req, res) {
-    res.send(`Guy's Sub-Folder`)
+    res.send(`Guy's Sub-Folder!`)
 });
+
+
 app.listen(webServerPort);
 console.log(`Server running at http://127.0.0.1:${webServerPort}`)
 
