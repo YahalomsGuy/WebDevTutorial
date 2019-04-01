@@ -1,40 +1,29 @@
-// run area
-
-
-// setIval()
-
-
-//to Respond to requests from Web interfaces (the front End)
-
-// Load the HTTP module
-
-const http = require('http');
+const cors = require('cors');
+const express = require('express');
 const fs = require('fs');
-const webServerPort = 8500
-const server = http.createServer((request, response) => {
+let app = express();
+app.use(cors());
+const webServerPort = 8500;
 
-    response.writeHead(200, { 'Content-Type': 'text/json' });
 
+
+app.get('/', function(req, res) {
+    res.send(200, { 'Content-Type': 'text/json' })
+    res.send('Hello World')
     fs.readFile('my.json', (err, content) => {
         console.log(content);
         response.write(content);
         response.end();
     });
-
-
-
-
 });
 
-server.listen(webServerPort);
 
-console.log(`Server running at http://127.0.0.1:${webServerPort}`);
+app.get('/guy', function(req, res) {
+    res.send(`Guy's Sub-Folder`)
+});
+app.listen(webServerPort);
+console.log(`Server running at http://127.0.0.1:${webServerPort}`)
 
-
-
-
-
-// functions area
 
 
 

@@ -6,14 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../../base/css/main.css">
+    <!-- <script src="main.js"></script> -->
 </head>
 
 <a href=""></a>
 
 <body>
+    ssss <br> fsdf <br> sdf <br> sdf <br> s
+    <br>
+    <table id='namesTable'>
+        <tbody id='tblBody'>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
     <script>
+        makeRequest();
+
+        function makeRequest() {
+
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.responseType = 'json';
+            httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                    if (httpRequest.status === 200) {
+                        console.log('Got Here');
+                        var json = httpRequest.response;
+                        console.log('Length:', json.length)
+                        json.forEach(element => {
+                            console.log(element.lastName);
+                        });
+                        var tableRef = document.getElementsByTagName('table');
+                        json.forEach(ele => {
+                            var newRow = tableRef.insertRow(tableRow.rows.length)
+                            newRow.insertCell(0).appendChild("ele");
+                            newRow.insertCell(1).appendChild("ele.id");
+                            newRow.insertCell(2).appendChild(elet.firstName);
+                            newRow.insertCell(3).appendChild(ele.lastName);
+                            newRow.insertCell(4).appendChild(ele.age);
+                            newRow.insertCell(5).appendChild(ele.city);
+                            newRow.insertCell(6).appendChild(ele.working);
+
+                        })
+
+
+
+
+                        // document.querySelector('.dollarRate').innerHTML = "the Dollar rate of ILS is: " + JSON.parse(httpRequest.responseText).rates.ILS;
+                        //console.log(JSON.parse(httpRequest.responseText).rates.ILS);
+                    } else {
+                        // alert('There was a problem with the request. \r\n The Page has returned error number: ' + httpRequest.status)
+                    }
+                }
+            };
+            httpRequest.open('GET', 'http://127.0.0.1:8500/');
+            // httpRequest.open('GET', '../server/my.json');
+            httpRequest.send();
+        }
         // setInterval(() => {
         //     console.log('Hi From the Server');
         // }, 2000);
