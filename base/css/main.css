@@ -125,6 +125,13 @@ tr:hover {
     background-color: rgb(250, 243, 233);
 }
 
+table.noBorder,
+th.noBorder,
+td.noBorder {
+    border: solid black 0px;
+    vertical-align: top;
+}
+
 .yellowbg {
     background-color: lightyellow;
 }

@@ -1,0 +1,15 @@
+[{
+    "id": 1,
+    "firstName": "Guy",
+    "familyName": "Maimon",
+    "age": 46,
+    "city": "Moscow",
+    "Working": true
+} {
+    "id": 2,
+    "firstName": "Ofek",
+    "familyName": "Maimon",
+    "age": 17,
+    "city": "Kiryat Tivon",
+    "Working": false
+}]
