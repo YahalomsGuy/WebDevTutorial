@@ -19,12 +19,11 @@ This web-site was built and designed while following an online WebDev course onl
   * Express.JS
   * .......
 * AFAIK - the actual course started around January 2019 and has not ended yet (april 2019)
-<br>
+
 Some notes about the course and the web-site:
+
 * The web-site was first created as acomment book.
 * Since the web-site is developed for usage along with an IDE, the layout of the web-site is intentionally very narrow!!!!
-* Since the web-site was developed step by step with the ongoing course,<br> 
-     the design and sophistication of the web-site is advancing <br>
-     with the knowledge granted in the course <br>
-* Every once in a while, I go through previously created pages and re-design, enhance them according to better methods I've learnt.<br>
-* The design / Structure of the web-site may change dramatically, according to the progress of the course<br>
+* Since the web-site was developed step by step with the ongoing course,the design and sophistication of the web-site is advancing with the knowledge granted in the course 
+* Every once in a while, I go through previously created pages and re-design, enhance them according to better methods I've learnt.
+* The design / Structure of the web-site may change dramatically, according to the progress of the course
