@@ -1,8 +1,8 @@
-const cors = require('cors');
+// const cors = require('cors');
 const express = require('express');
 const fs = require('fs');
 let app = express();
-app.use(cors());
+// app.use(cors());
 const webServerPort = 8500;
 
 app.get('/', function(req, res) {
@@ -21,6 +21,27 @@ app.get('/', function(req, res) {
 app.get('/guy', function(req, res) {
     res.send(`Guy's Sub-Folder!`)
 });
+
+app.get('/todos', function(req, res) {
+    res.send(
+        [{
+                id: 1,
+                title: 'Throw garbage',
+                completed: false
+            },
+            {
+                id: 2,
+                title: 'Go Shopping',
+                completed: true
+            },
+            {
+                id: 3,
+                title: 'Smoke',
+                completed: false
+            }
+        ]
+    )
+})
 
 
 app.listen(webServerPort);
