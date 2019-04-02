@@ -28,6 +28,21 @@ Some notes about the course and the web-site:
 * Every once in a while, I go through previously created pages and re-design, enhance them according to better methods I've learnt.
 * The design / Structure of the web-site may change dramatically, according to the progress of the course
 
+Some about me:
 
+* Former Israely, Living in Moscow
+* History as SysAdmin and System Infrastruture Manager
+* working as "Old-School" developer in the last 4 years with:
+  * VB.NET
+  * C
+  * C++
+  * ASM
+  * Swift / Objective C
+  * Some Java
+  * Some PHP
+  * Some Python
+  * Specializes in creating Algorithms for Serializarion and randomization of data.
+  * Bluetooth / and serial data communication
+  
 Where this thing is going? I really have no Idea......
 Guy
