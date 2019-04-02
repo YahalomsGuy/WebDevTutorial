@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTML forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+
+    <style>
+        .box1 {
+            background: orange;
+            width: 200px;
+            height: 100px;
+            color: white;
+        }
+        
+        .box2 {
+            background: green;
+            width: 50%;
+            height: 200px;
+            color: white;
+        }
+        
+        .box3 {
+            background: orange;
+            width: 200px;
+            height: 100px;
+            color: white;
+            display: inline-block;
+        }
+        
+        .box4 {
+            background: green;
+            width: 50%;
+            height: 200px;
+            color: white;
+            display: inline-block;
+        }
+        
+        .box5 {
+            background: orange;
+            width: 200px;
+            height: 100px;
+            color: white;
+            float: right;
+        }
+        
+        .box6 {
+            background: green;
+            width: 50%;
+            height: 200px;
+            color: white;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="head">CSS - Sizes</p>
+
+    <div>
+        <h2>em size</h2>
+    </div>
+    <div style="font-size: 1em">this is the font size 1em - 16px</div>
+    <div style="font-size: 2em">this is the font size 2em - 32px</div>
+    <div style="font-size: 3em">this is the font size 3em - 48px</div>
+
+    <div>
+        <h2>box1</h2>
+    </div>
+    <pre><code data-language="css">
+.box1 {
+    background: orange;
+    width: 200px;
+    height: 100px;
+    color: white;
+}
+</code></pre>
+    <div class="box1">width is fixxed</div>
+    <div>
+        <h2>box2</h2>
+    </div>
+    <pre><code data-language="css">
+.box2 {
+    background: green;
+    width: 50%;
+    height: 200px;
+    color: white;
+}   
+</code></pre>
+    <div class="box2">width is 50% of the windows width</div>
+    <div>
+        <h2>box3 and box4</h2>
+    </div>
+    <pre><code data-language="html">
+<div class="box3">
+    width is fixxed with display: inline-block
+</div>
+<div class="box4">
+    width is 50% of the windows width with 
+    display: inline-block and without crlf between the boxes
+</div>    
+</code></pre>
+    <pre><code data-language="css">
+.box3 {
+    background: orange;
+    width: 200px;
+    height: 100px;
+    color: white;
+    display: inline-block;
+}
+.box4 {
+    background: green;
+    width: 50%;
+    height: 200px;
+    color: white;
+    display: inline-block;
+}   
+</code></pre>
+    <div class="box3">width is fixxed with display: inline-block</div>
+    <div class="box4">width is 50% of the windows width with display: inline-block and without crlf between the boxes</div>
+    <div>
+        <h2>box 5 and box6 </h2>
+    </div>
+    <pre><code data-language="html">
+<div class="box5">floating right, although first in code</div>
+<div class="box6">floating left, although second in code</div>
+</code></pre>
+    <pre><code data-language="css">
+.box5 {
+    background: orange;
+    width: 200px;
+    height: 100px;
+    color: white;
+    float: right;
+}
+.box6 {
+    background: green;
+    width: 50%;
+    height: 200px;
+    color: white;
+    float: left;
+}   
+</code></pre>
+    <div>
+        <div class="box5">floating right, although first in code</div>
+        <div class="box6">floating left, although second in code</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+
+
+    <pre><code data-language="css"></code></pre>
+    <a href="../index.html#s01">back to main page</a>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

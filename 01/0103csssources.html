@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS Sources</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+</head>
+
+<body>
+    <div class="head">CSS source elements</div>
+
+    <div>regardless of the location of the reference, there are 3 types of CSS elements</div>
+    <div>
+        <h2>1. tag based element</h2>
+    </div>
+    <div>a block can be defined by a name of a HTML tag, and affect all the page</div>
+    <pre><code data-language="css">
+    p {
+        font-size: 40px;
+    }
+    </code></pre> this will affect all p tags in the html page.
+    <div>
+        <h2>2. class based element</h2>
+    </div>
+    <div>a class can be defined in the CSS block</div>
+    <pre><code data-language="css">
+    .className {
+        font-size: 40px;
+    }
+    </code></pre>
+    <div>** A class is defined wil a . (dot) prefix</div>
+    <div><b>calling a style class:</b></div>
+    <pre><code data-language="html">
+    <div class="className">
+    ......content
+    </div>
+</code></pre>
+    <div>a class can be used for multiple html elements.</div>
+    <div>
+        <h2>2. id based element</h2>
+    </div>
+    <div>An id can be defined in the CSS block</div>
+    <pre><code data-language="css">
+    #idName {
+        font-size: 40px;
+    }
+    </code></pre>
+    <div>** An id is defined wil a # (pound) prefix</div>
+    <div><b>calling a style id:</b></div>
+    <pre><code data-language="html">
+    <div id="className">
+        ......content
+    </div>
+    </code></pre>
+    <div>An id is defined to a uniue object</div>
+
+    <div>
+        <h2>Selectors List</h2>
+    </div>
+    <div>A css selector can be a refernce of multiple html elemens</div>
+    <div>the references can be nested or filtered</div>
+
+    <img src="../images/selectorslist.jpg" alt="CSS selectors List" width="800px">
+
+
+    <div>
+        <p class="head">css game</p>
+        <a href="https://flukeout.github.io/#" target="_blank"> <br>
+            <img src="../images/cssgame.jpg" title="css game" width="400" />
+        </a>
+    </div>
+    <a href="../index.html#01">back to main page</a>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

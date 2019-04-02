@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript Timing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+</head>
+
+<body>
+    <div class="head">JavaScript Time Handling</div>
+    <div>
+        <h2>setTimeout()</h2>
+    </div>
+    <div>setTimeout is a global built in function in Javascript, counting time in milliseconds before running a function</div>
+    <br>
+    <div>
+        <h2>setTimeout() - syntax:</h2>
+    </div>
+    <pre><code data-language="javascript">
+    var Id = setTimeout(    
+        function ()                 //Id - will return a unique identifier
+        { 
+                                    //actions to run
+        }
+        , time);                    //time to wait in milliseconds
+    </code></pre>
+    <div>The oposite function is clearTimeout()</div>
+    <div>
+        <h2>clearTimeout() - syntax:</h2>
+    </div>
+    <pre><code data-language="javascript">
+    clearTimeout(Id);   // Id - the unique idenftifier of the setTimeout function
+    </code></pre>
+    <div>
+        <h2>Sample application of Timeout</h2>
+    </div>
+    <label for="timeToWait">How much should I wait (in seconds)?</label><br>
+    <input type="text" name="timeToWait" class="timeToWait" id="timeToWait" value='3'>
+    <br>
+    <button id="waitButton" onclick="runTimeOut()">Press to wait</button>
+    <button id="cancelButton" onclick="cancelTimeOut()" disabled>Press to cancel</button>
+
+    <div>the script for the above application is:</div>
+    <pre><code data-language="javascript">
+    var myTimeoutId = 0                     //defined out of the function so it can be used in the cancel function
+    function runTimeOut(){ 
+        var cancelButton = document.getElementById("cancelButton");
+        var timeMs = parseInt(document.getElementById("timeToWait").value);
+        cancelButton.disabled = false;
+        myTimeoutId = setTimeout(function () {
+            var alertText = "Waited " + timeMs + " seconds."
+            cancelButton.disabled = true;
+            alert(alertText);
+        },  timeMs * 1000);
+    
+    }
+    function cancelTimeOut() {
+        var cancelButton = document.getElementById("cancelButton");
+        clearTimeout(myTimeoutId);
+        cancelButton.disabled = true;
+    }
+    </code></pre>
+    <div>
+        <h2>setInterval()</h2>
+    </div>
+    <div>This will perform an action every x milliseconds, until broken by </div>
+    <div>
+        <h2>clearInterval()</h2>
+    </div>
+
+    <pre><code data-language="javascript">
+    var intervalID = setInterval(
+        function(){
+            //actions ;
+        },time);
+
+    clearInterval(intervalID);
+    </code></pre>
+    <div>
+        <h2>Sample application of Interval</h2>
+    </div>
+    <label for="mySelf">Press to start:</label>
+    <br>
+    <button onclick="StartInterval()" id="startButton">Start</button>
+    <button onclick="stopInterval()" disabled id="stopButton">Stop</button>
+    <button onclick="zeroOutInterval()" disabled id="zeroButton">Zero-out</button>
+    <label id="ivalLabel">Start.....</label>
+    <br>
+    <pre><code data-language="javascript">
+
+    var myIntervalID = 0
+    var counter = 1;
+    var myLabel = document.getElementById("ivalLabel");
+    function StartInterval(){                       //Run the counter
+        disabledButtons(1,0,1);
+        myIntervalID = setInterval(function() {
+            myLabel.innerHTML = "counting " + counter;
+            console.log(counter);
+            counter++;
+        },1000)
+    };
+    function stopInterval() {                       //Stop the counter
+        disabledButtons(0,1,0);
+        clearInterval(myIntervalID);
+    };
+    function zeroOutInterval(){                     //Zero Out the counter
+        counter = 0;
+        myLabel.innerHTML = "Start......";
+    }
+    function disabledButtons(start,stop,zero){      //Buttons on-off
+        var startButton = document.getElementById("startButton");
+        var stopButton = document.getElementById("stopButton");
+        var zeroButton = document.getElementById("zeroButton"); 
+        startButton.disabled = start;
+        stopButton.disabled = stop;
+        zeroButton.disabled = zero; 
+    }
+        
+    </code></pre>
+    <div>
+        <h3>Syncronous vs Asyncronous actions:</h3>
+    </div>
+    <div>setTimeout and setInterval are asyncronous action performed by the web-page.<br> This means then can run as a background probess and will not interfere with the page other events<br> a long and exsusting actions should better run with a setTimeout
+        function with time 0</div>
+
+    <hr>
+    <div>a sample of setInterval in action with AJAX, based on the Pets selector,</div>
+    <div>built in the AJAX tutorial can be found <a href="../samples/json-pets-with-interval.html" target="_blank">Here</a></div>
+
+
+
+    <script>
+        var myTimeoutId = 0
+        var myIntervalID = 0
+        var counter = 1;
+        var myLabel = document.getElementById("ivalLabel");
+
+        function runTimeOut() {
+            var timeMs = parseInt(document.getElementById("timeToWait").value);
+            myTimeoutId = setTimeout(function() {
+                var alertText = "Waited " + timeMs + " seconds."
+                cancelButton.disabled = true;
+                alert(alertText);
+            }, timeMs * 1000);
+        }
+
+        function cancelTimeOut() {
+            var cancelButton = document.getElementById("cancelButton");
+            clearTimeout(myTimeoutId);
+        }
+
+        function StartInterval() {
+            disabledButtons(1, 0, 1);
+            myIntervalID = setInterval(function() {
+                myLabel.innerHTML = "counting " + counter;
+                console.log(counter);
+                counter++;
+            }, 1000)
+        };
+
+        function stopInterval() {
+            disabledButtons(0, 1, 0);
+            clearInterval(myIntervalID);
+        };
+
+        function zeroOutInterval() {
+            counter = 0;
+            myLabel.innerHTML = "Start......";
+        }
+
+        function disabledButtons(start, stop, zero) {
+            var startButton = document.getElementById("startButton");
+            var stopButton = document.getElementById("stopButton");
+            var zeroButton = document.getElementById("zeroButton");
+            startButton.disabled = start;
+            stopButton.disabled = stop;
+            zeroButton.disabled = zero;
+        }
+    </script>
+
+    <a href="../index.html#s04">back to main page</a>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

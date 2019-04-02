@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JSdomStyling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+</head>
+
+<body>
+    <div class="head">DOM Styling with JavaScript</div>
+
+    <div>By Querying an element or class, JS can style the content</div>
+    <pre><code data-language="javascript">var el = document.querySelector(name);</code></pre>
+
+    <div class='bg'>background color changed </div>
+    <div class='dsp'>this should not be displayed (place is freed) </div>
+    <div class='hid'>this should be hidden (place is occupied) </div>
+    <div class='fnt'>the font color and size changed </div>
+    <textarea class="taneutral" style="height: 60px" )>
+** two objects in the code are not displayed above:
+   one is hidden and occupying its place
+   the other is no displayed and not occupying its original space
+</textarea>
+    <pre><code data-language="javascript">
+var bgColor = document.querySelector('.bg');
+bgColor.style.backgroundColor = 'pink';         
+
+var notDisp = document.querySelector('.dsp');
+notDisp.style.display = 'none';
+
+var hid = document.querySelector('.hid');
+hid.style.visibility = 'hidden';
+
+var fontCol = document.querySelector('.fnt');
+fontCol.style.color = 'red';
+fontCol.style.fontSize = '25px';
+</code></pre>
+
+    <pre><code data-language="javascript">
+console.log(hid.style);                 //returns the style of an element
+console.log(fontCol.style['color']);    
+//or
+console.log(fontCol.style.color);       //return a specific value (color)
+</code></pre>
+    <img src="./img/DomManipulationCheatSheet.jpg" width="1000px" alt="" />
+
+    <a href="../index.html#s04">back to main page</a>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+    <script src="./js/402.js"></script>
+</body>
+
+</html>

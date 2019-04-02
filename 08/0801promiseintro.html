@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PromiseIntro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+</head>
+
+<body>
+    <div class="head">Introduction to Promise function</div>
+    <div>Promise is a built in function with 2 arguments:</div>
+    <ul>
+        <li>resolve</li>
+        <li>reject</li>
+    </ul>
+    <div>basic syntax of the promise() function is:</div>
+    <pre><code data-language="javascript">
+    var promise1 = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            resolve('AfterTimeout');
+        }, 1000);
+    });
+    promise1.then(function(value) {
+        console.log(value);
+
+    });
+    console.log(promise1);
+    </code></pre>
+    <div>In this sample, the Promise function will run a setTimeout function</div>
+    <ul>
+        <li>If Promise succeeds, the .then function will run.</li>
+        <li>If Promise failes, the .catch function will run.</li>
+    </ul>
+    <div><b>the Promise function is asyncronous, therefore any action run by it will hapan after the regular code.</b></div>
+    <div>
+        <h2>Promise with await</h2>
+    </div>
+    <div>Vid 27 ~ 30:00</div>
+    <pre><code data-language="javascript">
+    const getUser = cb => {
+        setTimeout(() => {
+            cb({
+                name: 'Max'
+            })
+        }, 2000)
+    }
+
+    getUser(user => {
+        console.log(user.name);
+    });
+    </code></pre>
+    <div>
+        <h2>Loading external script</h2>
+    </div>
+    <div>the next example shows how to add a link to external script in code, using promise function</div>
+    <pre><code data-language="javascript">
+    function loadScript(src) {
+        const SCR = 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js'
+        return new Promise((resolve, reject) => {
+            let script = document.createElement('script');
+            script.src = src;
+
+            script.onload = () => resolve(script);
+            script.onerror = () => 
+                reject(new Error('Script load error:' + src));
+            document.head.append(script);
+        });
+    }
+
+    let promise =
+    loadScript('SCR');
+    promise.then(
+        script => alert(`${script.src} is loaded!`),
+        error => alert(`Error: ${error.message}`)
+    );  
+    </code></pre>
+    <div>and with async & await</div>
+    <pre><code data-language="javascript">
+    (
+      async() => {                  
+        try {
+          let script =
+            await loadScript(SCR);
+              alert(`${script.src} is loaded!`);
+        } catch (error) {
+          error => alert(`Error: ${error.message}`);
+        }
+      }
+    )();    
+    //the func is wrapped with () and ran by ()
+    </code></pre>
+    <a href="../index.html#s08">back to main page</a>
+
+    <script>
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                let script = document.createElement('script');
+                script.src = src;
+
+                script.onload = () => resolve(script);
+                script.onerror = () => reject(new Error('Script load error: ' + src));
+                document.head.append(script);
+            });
+        }
+        (async() => {
+            try {
+                let script =
+                    await loadScript(
+                        'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js'
+                    );
+                console.log(`${script.src} is loaded!`);
+            } catch (error) {
+                error => alert(`Error: ${error.message}`);
+            }
+        })();
+
+        let promise = loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js');
+        promise.then(
+            script => console.log(`${script.src} is loaded!`),
+            error => console.log(`TheError: ${error.message}`)
+        );
+
+
+        const getUser = cb => {
+            setTimeout(() => {
+                cb({
+                    name: 'Max'
+                })
+            }, 2000)
+        }
+
+        getUser(user => {
+            console.log(user.name);
+        });
+
+
+        const applied = true;
+        var promise1 = new Promise(function(resolve, reject) {
+            if (applied) {
+                setTimeout(function() {
+                    resolve('AfterTimeout');
+                }, 1000);
+            }
+        });
+        promise1.then(function(value) {
+            console.log(value);
+
+        });
+        promise1.catch(function(error) {
+            console.log("Did Not");
+        });
+        console.log(promise1);
+    </script>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

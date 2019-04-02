@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rest Operator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+</head>
+
+<body>
+    <div class="head">Default functions parameters</div>
+
+    <div>When declaring a function, </div>
+    <div> a default value can be assigned to any argument</div>
+    <div>In every case the argument will not be sent while </div>
+    <div>calling the function, the default will be assigned</div>
+    <pre><code data-language="javascript">
+    fucntion calculate(a,b = 3) {
+        return a*b;
+    }
+    
+    calculate(2,2);         
+    //will return 4
+    
+    calculate(2);           
+    //will return 6 (2 sent * 3 default)
+
+    </code></pre>
+    <ul>
+        <li>
+            The default value(s) can be everywhere in the declaration of the function
+        </li>
+        <li>
+            While calling the function, multiple values can be discarded, only if:
+            <ul>
+                <li>
+                    All are defined as defaults in the declaration
+                </li>
+                <li>
+                    Not the first is missing from the call
+                </li>
+                <li>
+                    All missing values are the conscutive last values
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <a href="../index.html#s07">back to main page</a>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

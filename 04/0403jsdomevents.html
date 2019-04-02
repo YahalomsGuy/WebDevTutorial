@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTML forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+
+</head>
+
+<body>
+    <div class="head">
+        Events in JavaScript
+    </div>
+    <div>By Querying an element or class, JS can perform actions</div>
+    <br>
+    <pre><code data-language="javascript">var el = document.querySelector(name);</code></pre>
+
+    <input class="firstName" type="text" placeholder="FirstName"><br>
+    <input class="lastName" type="text" placeholder="Last Name">
+
+    <pre><code data-language="javascript">document.querySelector('.firstName').focus();</code></pre>
+    <div>Changes the focus to the First Name input box</div>
+    <hr>
+    <div>Interacting with a Button</div>
+    <div id="btnNoBtn">Giving the button an id</div>
+    <pre><code data-language="javascript"><button id="btn1">Click Here</button></code></pre>
+    <button id="myBtn">Click Me!</button>
+    <div>and assigning a function in JavaScript</div>
+    <div>
+        <h2>.onClick</h2>
+    </div>
+    <pre><code data-language="javascript">
+    document.querySelector('#btn1').onclick = 
+    function() {
+        alert("Clicked");
+    };
+    </code></pre>
+    <div>or by assigning the query to a variable and calling the function</div>
+    <pre><code data-language="javascript">
+    var goBtn = document.querySelector('#myBtn')
+    goBtn.onclick = function() {
+        alert("You just Clicked");
+    }
+    </code></pre>
+    <div>
+        <h2>
+            .addEventListener</h2>
+    </div>
+    <pre><code data-language="javascript">
+    var secondMove = function() {
+        onClick="alert('From the HTML')" 
+        onmouseover=this.style.color='green' 
+        onmouseout=this.style.color='blue' 
+        onmousedown=this.style.color='red'
+    }
+    goBtn.addEventListener('click',secondMove)
+    </code></pre>
+    <div>but instead of creating a function in the .js file</div>
+    <div>it can be written in the element itself</div>
+    <pre><code data-language="html">
+    <button class="colorfulButton"  <br="">  <!--br is not part of the code-->
+        onClick="alert('From the HTML')"     
+        onmouseover=this.style.color='green' 
+        onmouseout=this.style.color='blue' 
+        onmousedown=this.style.color='red'> Click Me! 
+    </button>
+    </code></pre>
+    <button class="colorfulButton" onClick="alert('From the HTML')" onmouseover=this.style.color='green' onmouseout=this.style.color='blue' onmousedown=this.style.color='red'>Click Me!
+    </button>
+    <br><br>
+
+    <a href="../index.html#s04">back to main page</a>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+    <script src="../js/403.js"></script>
+</body>
+
+</html>

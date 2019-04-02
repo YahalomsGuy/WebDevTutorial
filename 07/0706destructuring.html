@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rest Operator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+</head>
+
+<body>
+    <div class="head">Destructuring</div>
+    <div>according to the rules of destructuring , an array of values can be assigned to an array of variables </div>
+    <pre><code data-language="javascript">
+    [a, b, c] = [10, 20, 30];                       
+    //a=10, b=20, c=30
+    
+    [a,b,...vars] = [10, 20, 30, 40, 50];           
+    //a=10, b=20, vars = [30, 40, 50]
+    
+    ({a,b, ...vars} = {a:10, b:20, c:30, d:40})  
+    //a=10, b=20, vars {c:30, d:40}
+    
+    ({b,a, ...vars} = {a:10, b:20, c:30, d:40})  
+    //will return the exact same assignments 
+    //(in object the order does not matter)
+    </code></pre>
+
+    <a href="../index.html#s07">back to main page</a>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTML forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+</head>
+
+<body>
+
+    <div class="head">String Manipulations and queries in JavaScript</div>
+    after a string variable was created as
+    <pre><code data-language="javascript">var myString = 'Guy Maimon'</code></pre>
+    <table>
+
+        <head>
+            <th>Sending a query of</th>
+            <th>will return</th>
+            <th>explaination</th>
+        </head>
+        <tr>
+            <td>
+                <pre><code data-language="javascript">myString.length</code></pre>
+            </td>
+            <td>
+                10
+            </td>
+            <td>Returns the length of thestring</td>
+        </tr>
+        <tr>
+            <td><pre><code data-language="javascript">myString[2]</code></pre></td>
+            <td>y</td>
+            <td>Returns a specific char from a string (0 based)</td>
+        </tr>
+        <tr>
+            <td><pre><code data-language="javascript">myString.indexof('imo')</code></pre></td>
+            <td>6</td>
+            <td>
+                Returns where the typed string starts from <br> if not found, will return -1
+            </td>
+        </tr>
+        <tr>
+            <td><pre><code data-language="javascript">myString.includes('imo'))</code></pre></td>
+            <td>TRUE</td>
+            <td>Returns TRUE if exists somewhere<br> otherwise Returns FALSE<br>
+            </td>
+        </tr>
+        <tr>
+            <td><pre><code data-language="javascript">
+if(myString.indexOf('Ma') !== -1)
+{
+    console.log("It's There");
+}else{
+    console.log("It's not There");
+}; 
+</code></pre>
+            </td>
+            <td>It's There</td>
+            <td>
+                if(myString.indexOf('test') !== -1)<br> Returns Ture if the exists in the string<br> if not found, will return -1
+            </td>
+        </tr>
+        <tr>
+            <td><pre><code data-language="javascript">myString.toLowerCase()</code></pre></td>
+            <td>guy maimon</td>
+            <td>converst all text to lower case</td>
+        </tr>
+        <tr>
+            <td><pre><code data-language="javascript">myString.toUpperCase()</code></pre></td>
+            <td>GUY MAIMON</td>
+            <td>converst all text to upper case</td>
+        </tr>
+        <tr>
+            <td><pre><code data-language="javascript">myString.slice(5)</code></pre></td>
+            <td>imon</td>
+            <td>Returns string after cutting # chars<br> does not change the variable
+            </td>
+        </tr>
+        <tr>
+            <td><pre><code data-language="javascript">myString.slice(5,7)</code></pre></td>
+            <td>im</td>
+            <td>Returns string after cutting #1 chars<br> Returns all the chars until #2<br> does not change the variable
+            </td>
+        </tr>
+    </table>
+
+
+
+
+    <a href="../index.html#s02">back to main page</a>
+
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

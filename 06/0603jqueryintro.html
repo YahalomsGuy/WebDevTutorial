@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery Intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+</head>
+
+<body>
+    <style>
+        .bordered {
+            border: 3px solid blue;
+        }
+        
+        .redBorder {
+            border: 5px solid red;
+        }
+    </style>
+    <div class="head">jQuery Introduction</div>
+    <div>jQuery is a library added to JavaScript, allowing to accomplish many actions easier/</div>
+    <div>One of the most important things jQuery added to javascript is <b>Aminations.</b></div>
+    <p>Full documentation of jQuery can be found at <a href="https://jquery.com">jQuery.com</a></p>
+    <br>
+    <div>In order to use the jQuery library, it must be referenced from the file</div>
+    <div>it can be downloaded to the server or to be referenced from a website</div>
+    <pre><code data-language="javascript">
+//local
+    <script src="../base/js/jquery.js"></script>
+//on the web
+    <script src="https://unpkg.com/jquery"></script>
+//should be placed with pther referenced scripts
+</code></pre>
+
+    <div>
+        <h3>Example 1:</h3>
+    </div>
+    <button id="button1">Click 1</button>
+    <button id="button2">Click 2</button>
+    <pre><code data-language="javascript">
+    $('#button1').click(
+        function(){
+            console.log('1 Clicked!');
+        }
+    )
+</code></pre>
+    <div>If we want to put the jQuery code before an object it interacts with, we can wrap the code with</div>
+    <pre><code data-language="javascript">
+    $(document).ready(function() {
+        //anything from anywhere in the code
+    })
+</code></pre>
+    <div>A short way of writing the above code is:</div>
+    <pre><code data-language="javascript">
+    $(function {
+        //anything from anywhere in the code
+    })
+</code></pre>
+    <p>Which means: <b>$(function(){})</b> can be written everywhere</p>
+    <div>It needs to be written only once in every page.</div>
+    <div>But anyway, The call to the jQuery library should be before the code</div>
+    <p>Nevertheless, the best practive is to write all js and jQery code in the end of the body of the page</p>
+    <div>For further details about jQuery and all the functions <a href="https://oscarotero.com/jquery" target="_blank">Click Here</a></div>
+    <br>
+    <div>
+        <h3>Querying selectors with jQuery</h3>
+    </div>
+    <pre><code data-language="javascript">
+    $( "#myId" );                           //a selector by Id
+    $( ".myClass");                         //a selector by class
+    $( "input[name='firstName']");          //input by it's name
+    $( "#contents ul.people li");           //ul with class people somewhere under a selector with id contents
+</code></pre>
+    <div>....more sophisticated filters</div>
+    <pre><code data-language="javascript">
+    $( ":button");                          //all types of buttons (both input and button)
+    $( "form :input");                      //all types of input fields in a form
+    $( "div.head").length                   //number of div selectors in the page  with class head
+</code></pre>
+    <div>and Filtered selections</div>
+    <pre><code data-language="javascript">
+    $( "div.head" ).has("p");               //div in class head with p selector inside
+    $( "h1" ).not(".bar");                  //h1 element that does not have bar class 
+    $( "ul li").filter( ".current");        //list without class current
+    $( "ul li").first();                    //the first item of a list
+    $( "ul li").eq( 5 );                    //the sixth element in a list
+    
+</code></pre>
+    <div>
+        <h3>Elements manipulation</h3>
+    </div>
+    <div>jquery can add any ability or style to an object</div>
+
+
+
+    <div>
+        <h3>Example 2:</h3>
+    </div>
+    <button id="addBorder">Add Border</button>
+    <button id="removeBorder">Remove Border</button>
+    <div id="toBeChanged">Text To be Styled by jQuery</div>
+    <div>This is done by addClass and removeClass functions - applying changes of CSS on the text</div>
+    <pre><code data-language="javascript">
+    $('#addBorder').click (
+        function() {
+            $('#toBeChanged').addClass('bordered');
+        }
+    )
+    $('#removeBorder').click (
+        function() {
+            $('#toBeChanged').removeClass('bordered');
+        }
+    )
+    //the above example uses hover and mouse out with multiple css classes
+</code></pre>
+
+    <div>And more powerfull, the toggleClass function</div>
+    <div>
+        <h3>Example 3:</h3>
+    </div>
+    <button id="toggler">On/Off</button>
+    <div id="txtToggled">Turns On and Off the styling</div>
+    <pre><code data-language="javascript">
+    $('#toggler').click (
+        function(){
+            $('#txtToggled').toggleClass('redBorder');
+        }
+    )
+   
+</code></pre>
+    <div>
+        <h3>Showing and hiding elements:</h3>
+    </div>
+    <div>show(), hide() and toggle() functions will effec elements</div>
+    <button onclick="$('#txt4').show('')">Show The Text</button>
+    <button onclick="$('#txt4').hide('')">Hide The Text</button>
+    <button onclick="$('#txt4').toggle('')">Toggle The Text</button>
+    <div id="txt4">Affected by the buttons</div>
+
+    <pre><code data-language="javascript">
+    <button onclick="$('#txt4').show('')">Show The Text</button>
+    <button onclick="$('#txt4').hide('')">Hide The Text</button>
+    <button onclick="$('#txt4').toggle('')">Toggle The Text</button>
+    <div id="txt4">Affected by the buttons</div>
+</code></pre>
+    <div>The <b>show,hide and toggle</b> functions can get speed parameters for animation</div>
+    <p><b>'slow' , 'medium' and 'fast' or time in milliseconds</b> will determin the speed of the action</p>
+    <div>
+        <h3>Example 4:</h3>
+    </div>
+    <button onclick="$('#img1').show('slow')">Show The Image</button>
+    <button onclick="$('#img1').hide('false')">Hide The Image</button>
+    <button onclick="$('#img1').toggle(800)">Toggle The Image</button>
+    <button id="resizer">Resize The Image</button>
+    <br>
+    <img src="https://www.yahaloms.com/wp-content/uploads/2019/03/logo.png" id="img1" style="display:none" width="200" alt="" />
+    <div>
+        <h3>CSS manipulations</h3>
+    </div>
+    <div>change the css attributes of an element , without a class it is referring to</div>
+
+    <div>
+        <h3>Example 5:</h3>
+    </div>
+
+    <button id="btnCss1">Style 1</button>
+    <button id="btnCss2">Style 2</button>
+    <button id="btnCss3">Style 3</button>
+    <button id="btnCss4">clear Style</button>
+    <br><br>
+    <span id="cssText">Sample text to be styled</span>
+    <br><br><br><br><br><br><br><br>
+    <pre><code data-language="javascript"></code></pre>
+    <a href="../index.html#s06">back to main page</a>
+
+
+    <script>
+        $('#btnCss1').click(
+            function() {
+                $("#cssText").css({
+                    "background": "red",
+                    "color": "white",
+                    "font-size": "40px"
+                });
+            }
+        )
+        $('#btnCss2').click(
+            function() {
+                $("#cssText").css({
+                    "background": "blue",
+                    "color": "yellow",
+                    "font-size": "25px"
+                });
+            }
+        )
+        $('#btnCss3').click(
+            function() {
+                $("#cssText").css({
+                    "background": "yellow",
+                    "color": "red",
+                    "font-size": "35px"
+                });
+            }
+        )
+        $('#btnCss4').click(
+            function() {
+                $("#cssText").css({
+                    "background": "white",
+                    "color": "black",
+                    "font-size": "16px"
+                });
+            }
+        )
+
+        $('#resizer').click(
+            function() {
+                var imgWidth = $('#img1').prop('width');
+                console.log(imgWidth);
+                if (imgWidth === 200) {
+                    $('#img1').prop('width', 400);
+                } else {
+                    $('#img1').prop('width', 200);
+                }
+            }
+        )
+
+        $('#toggler').click(
+            function() {
+                $('#txtToggled').toggleClass('redBorder');
+            }
+        )
+
+
+
+
+
+
+        // console.log($( "pre").length);
+        $('#removeBorder').prop('disabled', true);
+        $('#button1').click(
+            function() {
+                console.log('1 Clicked!');
+            }
+        )
+        $('#button2').click(
+            function() {
+                console.log('2 Clicked!');
+            }
+        )
+        $('#addBorder').click(
+            function() {
+                $('#toBeChanged').removeClass();
+                $('#toBeChanged').addClass('bordered');
+                $('#addBorder').prop('disabled', true);
+                $('#removeBorder').prop('disabled', false);
+            }
+        )
+
+        $('#removeBorder').click(
+            function() {
+                $('#toBeChanged').removeClass();
+                $('#addBorder').prop('disabled', false);
+                $('#removeBorder').prop('disabled', true);
+            }
+        )
+        $('#toBeChanged').hover(
+            function() {
+                $('#toBeChanged').addClass('redBorder');
+            }
+        )
+        $('#toBeChanged').mouseout(
+            function() {
+                $('#toBeChanged').removeClass('redBorder');
+            }
+        )
+    </script>
+    <script src="../base/js/jquery.js"></script>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

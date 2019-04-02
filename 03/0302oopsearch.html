@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OOP search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+    <style>
+        .yellowbg {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="head">
+        OOP - accessing and searching
+    </div>
+    <div>
+        <h2>Assignment of variable to child object</h2>
+    </div>
+    <pre><code data-language="javascript">
+var ageProperty = 'age';
+var nameProperty = 'name';
+
+console.log(person[ageProperty]);
+</code></pre>
+    <div>
+        <h2>Can be manipulated in RunTime</h2>
+    </div>
+    <pre><code data-language="javascript">
+var userInput = prompt("What data do you want to bring? ");
+
+console.log(person[userInput]);
+</code></pre>
+
+    <div>
+        <h2>input of a name of a property of the object</h2>
+    </div>
+    <pre><code data-language="javascript">age</code></pre>
+    <div>will return the data in the property</div>
+    <pre class="yellowbg"><code data-language="javascript">46</code></pre>
+
+    <div>
+        <h2>Loop over Object properties</h2>
+    </div>
+    <pre><code data-language="javascript">
+var string1 = '';
+var object1 = {a:1,b:2,c:3};
+for (var property in object1){
+    string1 += object1[property] + " ";
+}
+console.log(string1);
+</code></pre>
+    <div>will return sum of the values of each member of the object</div>
+    <pre class="yellowbg"><code data-language="javascript">6</code></pre>
+
+    <a href="../index.html#s03">back to main page</a>
+    <script src="./js/302.js"></script>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>

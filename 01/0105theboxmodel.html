@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>H04-Box-Mode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../base/css/main.css">
+    <style>
+        .head {
+            font-weight: bold;
+            font-size: 25px;
+            text-decoration: underline;
+        }
+        
+        #sample {
+            padding: 30px 10px;
+            width: 800px;
+            background: lightgray;
+            color: black;
+        }
+        
+        #box1 {
+            font-size: 25px;
+            color: black;
+            background: rgb(231, 229, 192);
+            width: 200px;
+        }
+        
+        #box2 {
+            font-size: 25px;
+            color: black;
+            background: rgb(196, 143, 189);
+            width: 450px;
+            height: 100px;
+        }
+        
+        #box3 {
+            font-size: 25px;
+            color: black;
+            background: rgb(209, 250, 213);
+            width: 450px;
+            height: 200px;
+            padding: 40px;
+        }
+        
+        #box4 {
+            font-size: 25px;
+            color: black;
+            background: rgba(185, 250, 245, 0.918);
+            width: 450px;
+            height: 200px;
+            padding: 10px 20px 30px 40px;
+        }
+        
+        #box5 {
+            font-size: 25px;
+            color: black;
+            background: rgb(254, 255, 199);
+            width: 450px;
+            height: 200px;
+            padding: 10px 20px 30px 40px;
+            border: 10px solid green;
+        }
+        
+        #box6 {
+            font-size: 25px;
+            color: black;
+            background: rgb(245, 143, 182);
+            width: 500px;
+            height: 200px;
+            border: 5px solid green;
+            border-radius: 25px;
+            margin: 1px;
+        }
+        
+        #box7 {
+            font-size: 25px;
+            color: white;
+            background: blue;
+            padding: 20px;
+            border: 10px solid red;
+            width: 500px;
+            margin: 40px;
+            outline: yellow solid 15px;
+            outline-style: ridge;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">The BOX model</div>
+    <img src="../images/BOXmodel.jpg" width=800px/>
+    <div id="sample">
+        This is the sample box with padding
+        <br>
+        <div id="box1">
+            This is the content of the block! width set
+        </div>
+        <br>
+        <div id="box2">
+            This is the content of the block!
+            <br> width and height set
+        </div>
+        <br>
+        <div id="box3">
+            This is the content of the block box 3
+            <br> with padding set - padding size is added to the box size general padding - same to all direction
+        </div>
+        <br>
+        <div id="box4">
+            This is the content of the block box 4
+            <br> with direction - specific
+            <br> with 4 values - directions (clockwise)
+            <br> with 2 values - 1st is top bottom, 2nd is sides
+        </div>
+        <br>
+        <div id="box5">
+            This is the content of the block box 5
+            <br> Border size is added to the size of the previous
+            <br> syntax - border: sizepx color type
+        </div>
+        <br>
+        <br>
+        <span id="box6">
+            This is first span box 6
+            with margin
+    </span>
+        <span id="box6">
+            This is second span box 6
+            with margin
+    </span>
+        <br><br><br><br><br>
+        <div id="box7">
+            This is the content of the block box 7
+            <br> With yellow outline
+        </div>
+    </div>
+
+    <pre><code data-language="javascript"></code></pre>
+    <a href="../index.html#s01">back to main page</a>
+    <script src="../base/js/rainbow-custom.min.js"></script>
+</body>
+
+</html>
