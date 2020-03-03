@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Yahalom Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <table width="100%">
+        <tr>
+            <td width="1%">
+                <div id="heDate" style="font-size: 0px; color: white; font-weight: bold; text-align: left;">
+                    <script type=" text/javascript " charset="utf-8 " src="https://www.hebcal.com/etc/hdate-en.js "></script>
+                </div>
+            </td>
+
+            <td width="99%">
+                <div id="tehChap" style="font-size: 50px;text-align: left; font-weight: bold;">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <script>
+        $(document).ready(function() {
+            var Chapters = ["1 - 9", "10 - 17", "18 - 22", "23 - 28", "29 - 34",
+                "35 - 38", "39 - 43", "44 - 48", "49 - 54", "55 - 59",
+                "60 - 65", "66 - 68", "69 - 71", "72 - 76", "77 - 78",
+                "79 - 82", "83 - 87", "88 - 89", "90 - 96", "97 - 103",
+                "104 - 105", "106 - 107", "108 - 112", "113 - 118", "119(1~96)",
+                "119(97~176)", "120 - 134", "135 - 139", "140 - 144", "145 - 150"
+            ]
+            var hebDate = document.getElementById("heDate").innerText;
+            console.log(hebDate);
+            var hebArray = hebDate.split(" ");
+            var currDay = hebArray[0].substr(0, hebArray[0].length - 2);
+            console.log(currDay);
+            var engMonth = hebArray[2].substr(0, hebArray[2].length - 1);
+            console.log(Chapters[currDay - 1]);
+            var ruMonth = "";
+
+            console.log(ruMonth);
+            currYear = hebArray[3];
+            console.log(currYear);
+            $("#tehChap").html("Главы " + Chapters[currDay - 1])
+        });
+    </script>
+</body>
+
+</html>

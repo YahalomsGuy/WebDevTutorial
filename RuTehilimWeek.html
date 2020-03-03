@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Yahalom Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <table width="100%">
+        <td width="100%">
+            <div id="tehChap" style="font-size: 50px;text-align: left; font-weight: bold;">
+            </div>
+        </td>
+        </tr>
+    </table>
+    <br>
+    <script>
+        $(document).ready(function() {
+            var Chapters = ["30 - 50", "51 - 72", "73 - 89", "90 - 106", "107 - 119", "120 - 150", "1 - 29"]
+            var currDate = new Date();
+            var dayOfWeek = currDate.getDay();
+            console.log(dayOfWeek);
+            $("#tehChap").html("Главы " + Chapters[dayOfWeek - 1])
+        });
+    </script>
+</body>
+
+</html>
